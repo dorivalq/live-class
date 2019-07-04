@@ -15,10 +15,4 @@ public class LiveClassApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LiveClassApplication.class, args);
 	}
-
-
-	@GetMapping("/hello/{name}")
-	public ResponseEntity<String> sayHello(@PathVariable String name){
-		return ResponseEntity.ok("Hello: " + name);
-	}
 }
