@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+  git-credential-helper: yes
+            
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commands:
+      - echo install
+  pre_build:
+    commands:
+      - acho pre-build
+  build:
+    commands:
+      - mvn package
+      - echo build
+  post_build:
+    run-as: Linux-user-name
+    commands:
+      - echo post-build
+artifacts:
+  files:
+    - target/live-class-0.0.1-SNAPSHOT.jar
+    - location
+    
